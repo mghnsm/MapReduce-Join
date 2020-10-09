@@ -9,4 +9,12 @@ public class TextPair implements WritableComparable<TextPair> {
 
     public Text getKey() { return key; }
     public Text getValue() { return value; }
+
+    public void write() {}
+
+    public void readFields() {}
+
+    public int compareTo() {}
+
+    public int hashCode() {}
 }
