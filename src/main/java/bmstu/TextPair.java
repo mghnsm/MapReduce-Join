@@ -1,4 +1,4 @@
 package bmstu;
 
-public class TextPair {
+public class TextPair  {
 }
