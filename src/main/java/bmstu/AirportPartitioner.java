@@ -1,9 +1,9 @@
 package bmstu;
 
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Partitioner;
 
-public class AirportPartitioner extends Partitioner<K, V> {
-
+public class AirportPartitioner extends Partitioner<TextPair, Text> {
     @Override
     public int getPartition(key, value, numReduceTasks) {
         return (key.hashCode() & Integer.MAX_VALUE) % numReduceTasks;
