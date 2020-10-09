@@ -1,4 +1,7 @@
 package bmstu;
 
-public class AirportComparator extends  {
+import org.apache.hadoop.io.WritableComparator;
+
+public class AirportComparator extends WritableComparator {
+    
 }
