@@ -24,7 +24,7 @@ public class TextPair implements WritableComparable<TextPair> {
         value.readFields(in);
     }
 
-    public int compareTo() {}
+    public int compareTo(TextPair text) {}
 
     public int hashCode() {}
 }
