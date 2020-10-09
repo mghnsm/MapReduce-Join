@@ -1,4 +1,6 @@
 package bmstu;
 
-public class DelayMapper {
+import org.apache.hadoop.mapreduce.Mapper;
+
+public class DelayMapper extends Mapper {
 }
