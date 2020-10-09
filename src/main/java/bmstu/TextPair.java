@@ -14,18 +14,24 @@ public class TextPair implements WritableComparable<TextPair> {
     public Text getKey() { return key; }
     public Text getValue() { return value; }
 
-    public void write(DataOutput out) {
+    @Override
+    public void write(DataOutput out) throws IOException {
         key.write(out);
         value.write(out);
     }
 
+    @Override
     public void readFields(DataInput in) throws IOException {
         key.readFields(in);
         value.readFields(in);
     }
 
-    public int compareTo(TextPair text) {
-        
+    @Override
+    public int compareTo(TextPair o) {
+        if (key.compareTo(o.getKey()) == 0) {
+            return value.compareTo(o.getValue());
+        }
+        return key.compareTo(o.getKey());
     }
 
     public int hashCode() {}
