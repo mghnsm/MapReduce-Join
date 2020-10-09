@@ -1,4 +1,7 @@
 package bmstu;
 
-public class TextPair  {
+import org.apache.hadoop.io.WritableComparable;
+
+public class TextPair implements WritableComparable<TextPair> {
+
 }
