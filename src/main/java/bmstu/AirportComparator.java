@@ -1,4 +1,4 @@
 package bmstu;
 
-public class AirportComparator {
+public class AirportComparator extends  {
 }
