@@ -8,7 +8,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class AirportMapper extends Mapper {
+public class AirportMapper extends Mapper<> {
     @Override
     public void map(Text key, TupleWritable value,
                     OutputCollector<Text, Text> output,
