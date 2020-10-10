@@ -33,4 +33,6 @@ public class TextPair implements WritableComparable<TextPair> {
         }
         return key.compareTo(o.getKey());
     }
+
+    
 }
