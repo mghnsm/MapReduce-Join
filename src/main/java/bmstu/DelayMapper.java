@@ -12,7 +12,8 @@ import java.io.IOException;
 public class DelayMapper extends Mapper<LongWritable, Text, TextPair, Text> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        
+        final int DEST_AIRPORT_ID = 14;
+        final int 
 
         TextPair code;
         Text delayTime;
