@@ -11,6 +11,16 @@ public class TextPair implements WritableComparable<TextPair> {
     private Text key;
     private Text value;
 
+    public TextPair(Text key, Text value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    public TextPair(String key, String value) {
+        this.key = new Text(key);
+        this.value = new Text(value);
+    }
+
     public Text getKey() { return key; }
     public Text getValue() { return value; }
 
