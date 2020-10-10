@@ -12,6 +12,6 @@ import java.io.IOException;
 public class DelayMapper extends Mapper<LongWritable, Text, TextPair, Text> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException {
-
+        
     }
 }
