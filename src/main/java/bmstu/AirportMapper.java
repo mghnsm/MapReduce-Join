@@ -12,7 +12,7 @@ import java.io.IOException;
 public class AirportMapper extends Mapper<LongWritable, Text, TextPair, Text> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException {
-
+        String line = value.toString();
 
         TextPair code;
         Text name;
