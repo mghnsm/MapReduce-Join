@@ -18,8 +18,8 @@ public class AirportMapper extends Mapper<LongWritable, Text, TextPair, Text> {
         int code = Integer.parseInt(line.substring(1, separator - 1));
         String name = line.substring(separator + 1, line.length() - 1);
 
-        TextPair code = new TextPair(code, "0");
-        Text name = new Text(name);
+        TextPair airportCode = new TextPair(code, "0");
+        Text airportName = new Text(name);
 
         context.write(code, name);
     }
