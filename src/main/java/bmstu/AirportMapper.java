@@ -12,8 +12,6 @@ import java.io.IOException;
 public class AirportMapper extends Mapper<LongWritable, Text, TextPair, Text> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException {
-        Text call = (Text) value.get(0);
-        Text system = (Text) value.get(1);
-        output.collect(call, system);
+        
     }
 }
