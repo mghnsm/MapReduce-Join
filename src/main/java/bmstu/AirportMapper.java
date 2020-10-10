@@ -14,9 +14,11 @@ public class AirportMapper extends Mapper<LongWritable, Text, TextPair, Text> {
     public void map(LongWritable key, Text value, Context context) throws IOException {
         String line = value.toString();
         int separator = line.indexOf(",");
-        
 
-        TextPair code;
+        int code = Integer.parseInt(line.substring(1, separator - 1));
+        String name = line.substring(separator + 1, line.length() - 1);
+
+        TextPair code = new TextPair(code, );
         Text name;
 
         context.write(code, name);
