@@ -23,7 +23,7 @@ public class DelayMapper extends Mapper<LongWritable, Text, TextPair, Text> {
             String[] line = value.toString().split(",", -1);
             String delay = line[ARR_DELAY_NEW];
 
-            if (delay != null && !delay.isEmpty() && Float.parseFloat(delay) > ) {
+            if (delay != null && !delay.isEmpty() && Float.parseFloat(delay) > 0) {
                 airportCode = new TextPair(line[DEST_AIRPORT_ID], "0");
                 delayTime = new Text(line[ARR_DELAY_NEW]);
             }
