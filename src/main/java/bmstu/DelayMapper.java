@@ -12,15 +12,19 @@ public class DelayMapper extends Mapper<LongWritable, Text, TextPair, Text> {
         final int DEST_AIRPORT_ID = 14;
         final int ARR_DELAY_NEW = 18;
 
+        TextPair airportCode;
+        Text delayTime;
+
         if (key.get() != 0) {
             String[] line = value.toString().split(",");
             String delay = line[ARR_DELAY_NEW];
 
             if (delay != null && !delay.isEmpty()) {
-                TextPair airportCode = new TextPair(line[DEST_AIRPORT_ID], "0");
-                Text delayTime = new Text(line[ARR_DELAY_NEW]);
-                context.write(airportCode, delayTime);
+                airportCode = new TextPair(line[DEST_AIRPORT_ID], "0");
+                delayTime = new Text(line[ARR_DELAY_NEW]);
             }
         }
+
+        context.write(airportCode, delayTime);
     }
 }
