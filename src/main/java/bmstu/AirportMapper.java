@@ -9,15 +9,18 @@ import java.io.IOException;
 public class AirportMapper extends Mapper<LongWritable, Text, TextPair, Text> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        String line = value.toString();
-        int separator = line.indexOf(",");
 
-        int code = Integer.parseInt(line.substring(1, separator - 1));
-        String name = line.substring(separator + 2, line.length() - 1);
+        if(key.get() != 0) {
+            String line = value.toString();
+            int separator = line.indexOf(",");
 
-        TextPair airportCode = new TextPair(Integer.toString(code), "0");
-        Text airportName = new Text(name);
+            int code = Integer.parseInt(line.substring(1, separator - 1));
+            String name = line.substring(separator + 2, line.length() - 1);
 
-        context.write(airportCode, airportName);
+            TextPair airportCode = new TextPair(Integer.toString(code), "0");
+            Text airportName = new Text(name);
+
+            context.write(airportCode, airportName);
+        }
     }
 }
