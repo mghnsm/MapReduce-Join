@@ -13,7 +13,7 @@ public class TextPair implements WritableComparable<TextPair> {
 
     public TextPair() {
         this.key = new Text();
-        this value = new Text();
+        this.value = new Text();
     }
 
     public TextPair(String key, String value) {
