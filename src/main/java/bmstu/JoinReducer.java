@@ -12,6 +12,9 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
     protected void reduce(TextPair key, Iterable<Text> values, Context context) throws
             IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
-        Text airportName = iter.next();
+        Text airportName = new Text(iter.next());
+        while (iter.hasNext()) {
+            
+        }
     }
 }
