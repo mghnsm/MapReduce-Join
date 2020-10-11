@@ -11,12 +11,12 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class JoinApp {
     public static void main(String[] args) throws Exception {
         if (args.length != 3) {
-            System.err.println("Usage: JoinApp ...");
+            System.err.println("Usage: JoinApp <path1> <path2> <output_path>");
             System.exit(-1);
         }
         Job job = Job.getInstance();
         job.setJarByClass(JoinApp.class);
-        job.setJobName("");
+        job.setJobName("Join");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, AirportMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, DelayMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
