@@ -19,11 +19,9 @@ public class DelayMapper extends Mapper<LongWritable, Text, TextPair, Text> {
         String delay = line[ARR_DELAY_NEW];
 
         if(delay != null && !delay.isEmpty()) {
-            
+            TextPair code;
+            Text delayTime;
+            context.write(code, delayTime);
         }
-
-        TextPair code;
-        Text delayTime;
-        context.write(code, delayTime);
     }
 }
