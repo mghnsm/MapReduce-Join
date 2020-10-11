@@ -42,7 +42,7 @@ public class TextPair implements WritableComparable<TextPair> {
         if (diff == 0) {
             return value.compareTo(o.getValue());
         }
-        
+        return diff;
     }
 
     @Override
