@@ -24,6 +24,6 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
                 maxDelayTime = delayTime;
             }
         }
-        context.write(airportName, );
+        context.write(airportName, Integer.toString(minDelayTime));
     }
 }
