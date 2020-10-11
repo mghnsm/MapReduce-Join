@@ -16,7 +16,7 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
         int minDelayTime = Integer.MAX_VALUE;
         int maxDelayTime = 0;
         while (iter.hasNext()) {
-            int delayTime = (iter.next());
+            int delayTime = iter.next().toString();
             if (delayTime < minDelayTime) {
                 minDelayTime = delayTime;
             } else if (delayTime > maxDelayTime) {
