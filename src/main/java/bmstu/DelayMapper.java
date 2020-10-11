@@ -24,7 +24,6 @@ public class DelayMapper extends Mapper<LongWritable, Text, TextPair, Text> {
                 delayTime = new Text(line[ARR_DELAY_NEW]);
             }
         }
-
         context.write(airportCode, delayTime);
     }
 }
