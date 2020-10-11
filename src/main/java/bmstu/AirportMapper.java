@@ -9,7 +9,6 @@ import java.io.IOException;
 public class AirportMapper extends Mapper<LongWritable, Text, TextPair, Text> {
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-
         if(key.get() != 0) {
             String line = value.toString();
             int separator = line.indexOf(",");
