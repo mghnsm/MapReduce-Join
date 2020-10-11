@@ -11,10 +11,10 @@ public class TextPair implements WritableComparable<TextPair> {
     private Text key;
     private Text value;
 
-    public TextPair() {
+    /*public TextPair() {
         this.key = new Text();
         this.value = new Text();
-    }
+    }*/
 
     public TextPair(String key, String value) {
         this.key = new Text(key);
