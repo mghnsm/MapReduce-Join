@@ -18,7 +18,6 @@ public class AirportMapper extends Mapper<LongWritable, Text, TextPair, Text> {
 
             TextPair airportCode = new TextPair(Integer.toString(code), "0");
             Text airportName = new Text(name);
-
             context.write(airportCode, airportName);
         }
     }
