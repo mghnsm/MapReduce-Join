@@ -38,7 +38,10 @@ public class TextPair implements WritableComparable<TextPair> {
 
     @Override
     public int compareTo(TextPair o) {
-        int diff = 
+        int diff = key.compareTo(o.getKey());
+        if (diff == 0) {
+            
+        }
     }
 
     @Override
