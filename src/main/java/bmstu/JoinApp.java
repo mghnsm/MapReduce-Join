@@ -11,10 +11,10 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class JoinApp {
     public static void main(String[] args) throws Exception {
-        if (args.length != 3) {
+        /*if (args.length != 3) {
             System.err.println("Usage: JoinApp ...");
             System.exit(-1);
-        }
+        }*/
         Job job = Job.getInstance();
         job.setJarByClass(JoinApp.class);
         job.setJobName("");
