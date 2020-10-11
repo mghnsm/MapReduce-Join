@@ -11,7 +11,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 public class JoinApp {
     public static void main(String[] args) throws Exception {
         if (args.length != 3) {
-            System.err.println("Usage: JoinApp <path1> <path2> <output_path>");
+            System.err.println("Usage: JoinApp <input path 1> <input path 2> <output path>");
             System.exit(-1);
         }
         Job job = Job.getInstance();
