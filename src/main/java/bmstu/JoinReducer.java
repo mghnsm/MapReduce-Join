@@ -13,17 +13,19 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
         Iterator<Text> iter = values.iterator();
         Text airportName = new Text(iter.next());
 
-        int minDelayTime = Integer.MAX_VALUE;
-        int maxDelayTime = 0;
+        int min = Integer.MAX_VALUE;
+        int max = 0;
 
         while (iter.hasNext()) {
             int delayTime = Integer.parseInt(iter.next().toString());
-            if (delayTime < minDelayTime) {
-                minDelayTime = delayTime;
-            } else if (delayTime > maxDelayTime) {
-                maxDelayTime = delayTime;
+            
+            if (delayTime < min) {
+                min = delayTime;
+
+            } else if (delayTime > max) {
+                max = delayTime;
             }
         }
-        context.write(airportName, new Text(Integer.toString(minDelayTime)));
+        context.write(airportName, new Text(Integer.toString(min)));
     }
 }
