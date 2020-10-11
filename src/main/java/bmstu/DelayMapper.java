@@ -20,7 +20,7 @@ public class DelayMapper extends Mapper<LongWritable, Text, TextPair, Text> {
                 return;
             }
 
-            String[] line = value.toString().split(",");
+            String[] line = value.toString().split(",", -1);
             String delay = line[ARR_DELAY_NEW];
 
             if (delay != null && !delay.isEmpty()) {
