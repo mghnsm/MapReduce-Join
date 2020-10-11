@@ -19,12 +19,8 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
         while (iter.hasNext()) {
             int delayTime = Integer.parseInt(iter.next().toString());
 
-            if (delayTime < min) {
-                min = delayTime;
-
-            } else if (delayTime > max) {
-                max = delayTime;
-            }
+            min = Math.min(delayTime, min);
+            max = Math.max(delayTime, max);
         }
         context.write(airportName, new Text(Integer.toString(min)));
     }
