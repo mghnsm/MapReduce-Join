@@ -3,7 +3,6 @@ package bmstu;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
-import javax.naming.Context;
 import java.io.IOException;
 import java.util.Iterator;
 
