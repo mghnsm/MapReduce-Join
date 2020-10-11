@@ -16,6 +16,10 @@ public class DelayMapper extends Mapper<LongWritable, Text, TextPair, Text> {
         Text delayTime = new Text();
 
         if (key.get() != 0) {
+            if (value.toString().isEmpty()) {
+                return;
+            }
+
             String[] line = value.toString().split(",");
             String delay = line[ARR_DELAY_NEW];
 
