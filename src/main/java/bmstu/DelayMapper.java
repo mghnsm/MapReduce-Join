@@ -20,7 +20,7 @@ public class DelayMapper extends Mapper<LongWritable, Text, TextPair, Text> {
 
         if(delay != null && !delay.isEmpty()) {
             TextPair code = new TextPair(line[DEST_AIRPORT_ID], "0");
-            Text delayTime = line[ARR_DELAY_NEW];
+            Text delayTime = new Text(line[ARR_DELAY_NEW]);
             context.write(code, delayTime);
         }
     }
