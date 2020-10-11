@@ -13,9 +13,15 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
             IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
         Text airportName = new Text(iter.next());
+        int minDelayTime = Integer.MAX_VALUE;
+        int maxDelayTime = 0;
         while (iter.hasNext()) {
-            Text delayTime = iter.next();
-            
+            int delayTime = (iter.next());
+            if (delayTime < minDelayTime) {
+                minDelayTime = delayTime;
+            } else if (delayTime > maxDelayTime) {
+                maxDelayTime = delayTime;
+            }
         }
     }
 }
