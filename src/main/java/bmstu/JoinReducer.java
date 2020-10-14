@@ -25,7 +25,7 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
         }
 
         if (count > 0) {
-            context.write(airportName, new Text(Float.toString(min)));
+            context.write(new Text("Airport: " + airportName), new Text(Float.toString(min)));
         }
     }
 }
