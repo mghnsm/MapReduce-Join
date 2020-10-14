@@ -12,7 +12,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, TextPair, Text> {
         if(key.get() != 0 && !value.toString().isEmpty()) {
 
             String line = value.toString();
-            int separator = line.indexOf(",");
+            int separator = line.indexOf(",", -1);
 
             int code = Integer.parseInt(line.substring(1, separator - 1));
             String name = line.substring(separator + 2, line.length() - 1);

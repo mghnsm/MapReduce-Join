@@ -12,12 +12,9 @@ public class DelayMapper extends Mapper<LongWritable, Text, TextPair, Text> {
         final int DEST_AIRPORT_ID = 14;
         final int ARR_DELAY_NEW = 18;
 
-        if (key.get() != 0) {
-            if (value.toString().isEmpty()) {
-                return;
-            }
+        if (key.get() != 0 && !value.toString().isEmpty()) {
 
-            String[] line = value.toString().split(",");
+            String[] line = value.toString().split(",", -1);
             String delay = line[ARR_DELAY_NEW];
 
             if (delay != null && !delay.isEmpty() && Float.parseFloat(delay) > 0) {
