@@ -14,6 +14,8 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
         Text airportName = new Text(iter.next());
 
         int count = 0;
+        float sum = 0;
+
         float min = Integer.MAX_VALUE;
         float max = 0;
 
@@ -21,12 +23,18 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
             float delayTime = Float.parseFloat(iter.next().toString());
             min = Math.min(delayTime, min);
             max = Math.max(delayTime, max);
+
+            sum += delayTime;
             count++;
         }
 
+        float average = sum / count;
+
         if (count > 0) {
             context.write(new Text("Airport: " + airportName),
-                    new Text("Min delay time: " + Float.toString(min) + " Max delay time: " + Float.toString(max)));
+                    new Text("Min delay time: " + Float.toString(min) +
+                            " Max delay time: " + Float.toString(max) +
+                            " Average: " + Float.toString(average)));
         }
     }
 }
