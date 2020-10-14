@@ -32,9 +32,9 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
 
         if (count > 0) {
             context.write(new Text("Airport: " + airportName),
-                    new Text("Min delay time: " + Float.toString(min) +
-                            " Max delay time: " + Float.toString(max) +
-                            " Average: " + Float.toString(average)));
+                    new Text("Min delay time: " + min +
+                            " Max delay time: " + max +
+                            " Average: " + average));
         }
     }
 }
