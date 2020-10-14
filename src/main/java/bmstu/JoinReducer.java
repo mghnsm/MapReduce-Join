@@ -18,7 +18,7 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
         float max = 0;
 
         while (iter.hasNext()) {
-            float delayTime = Integer.parseInt(iter.next().toString());
+            float delayTime = Float.parseFloat(iter.next().toString());
             min = Math.min(delayTime, min);
             max = Math.max(delayTime, max);
             count++;
